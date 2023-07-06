@@ -2,23 +2,23 @@ package com.example.aiblogdataservice.web
 
 import com.example.aiblogdataservice.model.BlogPost
 import com.example.aiblogdataservice.service.AIBlogService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import mu.two.KotlinLogging
+import org.springframework.web.bind.annotation.*
+
+val logger = KotlinLogging.logger {}
 
 @RestController
 class AIBlogController (
         val aiBlogService: AIBlogService
 ){
-    @PostMapping("/blog-post")
+    @PostMapping("/blog-posts")
     fun createNewBlogPost(@RequestBody blogPost: BlogPost): BlogPost{
         return aiBlogService.saveBlogPost(blogPost)
     }
 
-    @GetMapping("/blog-post")
+    @CrossOrigin(origins = arrayOf("http://localhost:3000"))
+    @GetMapping("/blog-posts")
     fun getBlogPost(@RequestParam title: String): BlogPost? {
-        return aiBlogService.getBlogPost(title)
+            return aiBlogService.getBlogPost(title)
     }
 }
