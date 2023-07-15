@@ -16,7 +16,6 @@ class AIBlogController (
         return aiBlogService.saveBlogPost(blogPost)
     }
 
-    @CrossOrigin(origins = arrayOf("http://localhost:3000"))
     @GetMapping("/blog-posts")
     fun getBlogPost(@RequestParam title: String): BlogPost? {
             return aiBlogService.getBlogPost(title)
