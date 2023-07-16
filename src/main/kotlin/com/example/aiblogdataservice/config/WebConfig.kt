@@ -12,6 +12,7 @@ class WebConfig : WebMvcConfigurer {
                 .allowedOrigins("https://ai-blog-frontend-b47e4646b476.herokuapp.com")
                 .allowedOrigins("http://alexplaza.me")
                 .allowedOrigins("https://alexplaza.me")
+                .allowedOrigins("https://postscribbled.com")
                 .allowedMethods("*")
     }
 }
