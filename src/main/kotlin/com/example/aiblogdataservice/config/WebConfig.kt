@@ -10,7 +10,8 @@ class WebConfig : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
                 .allowedOrigins("https://ai-blog-frontend-b47e4646b476.herokuapp.com")
+                .allowedOrigins("http://alexplaza.me")
+                .allowedOrigins("https://alexplaza.me")
                 .allowedMethods("*")
-                .allowedOriginPatterns("")
     }
 }
