@@ -16,7 +16,6 @@ class AIBlogController (
         return aiBlogService.saveBlogPost(blogPost)
     }
 
-    @CrossOrigin(origins = ["https://ai-blog-data-service-2902779ebc41.herokuapp.com"])
     @GetMapping("/blog-posts")
     fun getBlogPost(@RequestParam title: String): BlogPost? {
             return aiBlogService.getBlogPost(title)
