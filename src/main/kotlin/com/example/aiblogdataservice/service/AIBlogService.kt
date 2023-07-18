@@ -16,4 +16,8 @@ class AIBlogService(
     fun getBlogPost(title: String): BlogPost? {
         return blogPostRepo.findByTitle(title)
     }
+
+    fun getAllBlogPosts(): List<BlogPost> {
+        return blogPostRepo.findAll().toList()
+    }
 }

@@ -16,8 +16,14 @@ class AIBlogController (
         return aiBlogService.saveBlogPost(blogPost)
     }
 
-    @GetMapping("/blog-posts")
-    fun getBlogPost(@RequestParam title: String): BlogPost? {
-            return aiBlogService.getBlogPost(title)
+    @GetMapping("/blog-posts/{title}")
+    fun getBlogPost(@PathVariable title: String): BlogPost? {
+        return aiBlogService.getBlogPost(title)
     }
+
+    @GetMapping("/blog-posts")
+    fun getBlogPosts(): List<BlogPost> {
+        return aiBlogService.getAllBlogPosts()
+    }
+
 }
