@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "blog_post")
 class BlogPost(
-        @Id @GeneratedValue val id: Int? = null,
+        @Id
         var title: String = "",
 
         @Column(length = 1000)
