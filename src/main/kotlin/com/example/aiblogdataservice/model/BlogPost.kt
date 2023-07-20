@@ -17,5 +17,5 @@ class BlogPost(
         @ElementCollection
         @CollectionTable(name = "keywords", joinColumns = [JoinColumn(name = "blogpost_title")])
         @Column(name = "keyword")
-        var keywords: MutableSet<String> = mutableSetOf()
+        val keywords: MutableSet<String> = mutableSetOf()
 )
