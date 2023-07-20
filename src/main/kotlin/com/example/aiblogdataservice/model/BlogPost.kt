@@ -14,9 +14,8 @@ class BlogPost(
 
         var description: String = "",
 
-        @OneToMany(mappedBy = "blogPost",
-                cascade = [CascadeType.ALL],
-                orphanRemoval = true,
-                fetch = FetchType.LAZY)
-        var keywords: Set<Keywords> = emptySet()
+        @ElementCollection
+        @CollectionTable(name = "keywords", joinColumns = [JoinColumn(name = "blogpost_title")])
+        @Column(name = "keyword")
+        var keywords: Set<String> = emptySet()
 )
